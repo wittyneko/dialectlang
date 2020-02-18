@@ -94,6 +94,9 @@ inline infix fun 长整型.减到(乙: 长整型) = 自身 downTo 乙
 inline fun 整型数列.反向() = reversed()
 inline fun 长整型数列.反向() = reversed()
 inline fun 字符型数列.反向() = reversed()
+inline infix fun 整型数列.反向(的: 的) = reversed()
+inline infix fun 长整型数列.反向(的: 的) = reversed()
+inline infix fun 字符型数列.反向(的: 的) = reversed()
 
 inline infix fun 整型数列.每隔(个数: 整型) = 自身 step 个数
 inline infix fun 长整型数列.每隔(个数: 长整型) = 自身 step 个数

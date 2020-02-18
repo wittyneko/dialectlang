@@ -23,4 +23,4 @@ typealias 双精度迭代器 = DoubleIterator
 
 inline fun <类型> 迭代器<类型>.下一个() = next()
 
-inline infix fun <类型> 迭代器<类型>.循环(代码块: (类型) -> 单元) = forEach(代码块)
+inline infix fun <类型> 迭代器<类型>.循环(代码块: (类型) -> 的) = forEach(代码块)

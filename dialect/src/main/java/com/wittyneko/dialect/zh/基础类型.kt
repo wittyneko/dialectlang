@@ -4,9 +4,9 @@ package com.wittyneko.dialect.zh
 
 import kotlin.experimental.*
 
-typealias 随便 = Any
-typealias 无关 = Nothing
-typealias 单元 = Unit
+typealias 无 = Nothing
+typealias 的 = Unit
+typealias 任何 = Any
 
 typealias 可比较<类型> = Comparable<类型>
 
@@ -50,6 +50,16 @@ inline infix fun 布尔型.与(乙: 布尔型) = 自身 and 乙
 inline infix fun 布尔型.或(乙: 布尔型) = 自身 or 乙
 
 inline infix fun 布尔型.异或(乙: 布尔型) = 自身 xor 乙
+
+inline infix fun 布尔型.并且(乙: 布尔型) = this && 乙
+inline infix fun 布尔型.并且(乙: () -> 布尔型) = this && 乙()
+inline infix fun (() -> 布尔型).并且(乙: 布尔型) = this() && 乙
+inline infix fun (() -> 布尔型).并且(乙: () -> 布尔型) = this() && 乙()
+
+inline infix fun 布尔型.或者(乙: 布尔型) = this || 乙
+inline infix fun 布尔型.或者(乙: () -> 布尔型) = this || 乙()
+inline infix fun (() -> 布尔型).或者(乙: 布尔型) = this() || 乙
+inline infix fun (() -> 布尔型).或者(乙: () -> 布尔型) = this() || 乙()
 
 
 /**************** 字符型 ****************/
@@ -422,7 +432,9 @@ inline infix fun 长整型.或(乙: 长整型) = 自身 or 乙
 inline infix fun 长整型.异或(乙: 长整型) = 自身 xor 乙
 inline val 长整型.倒置 get() = 自身.inv()
 
+
 /**************** 浮点型 ****************/
+
 
 inline infix fun 浮点型.大于(乙: 字节型) = 自身 > 乙
 
